@@ -1,1 +1,4 @@
 node_modules/
+
+# Exclude Javascript files from 
+ts-hello/*.js 
