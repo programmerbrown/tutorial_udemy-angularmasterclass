@@ -1,4 +1,7 @@
 node_modules/
 
-# Exclude Javascript files from 
+# Exclude Javascript files from ts-hello
 ts-hello/*.js 
+
+# Exclude Javascript files from ts-like-button
+ts-like-button/*.js 
