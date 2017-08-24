@@ -7,12 +7,18 @@ import{ Component } from '@angular/core';
     <div (click)="onDivClick()">
         <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button>
     </div>
+    <br/>
+    <input (keyup.enter)="onKeyUp()" /> 
     `
 })
 export class CoursesComponent {
     title = "List of courses";
     courses;
     isActive = false;
+
+    onKeyUp($event) {
+        console.log("ENTER was pressed");
+    }
 
     onDivClick() {
         console.log("Div was clicked");
