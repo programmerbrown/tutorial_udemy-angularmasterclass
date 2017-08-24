@@ -8,7 +8,7 @@ import{ Component } from '@angular/core';
         <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button>
     </div>
     <br/>
-    <input (keyup.enter)="onKeyUp()" /> 
+    <input #email (keyup.enter)="onKeyUp(email.value)" /> 
     `
 })
 export class CoursesComponent {
@@ -16,8 +16,8 @@ export class CoursesComponent {
     courses;
     isActive = false;
 
-    onKeyUp($event) {
-        console.log("ENTER was pressed");
+    onKeyUp(email) {
+        console.log(email);
     }
 
     onDivClick() {
