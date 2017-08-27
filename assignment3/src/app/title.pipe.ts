@@ -15,7 +15,7 @@ export class TitlePipe implements PipeTransform {
             'and',
             'to'
         ];
-        
+        let title: string = value;
         if(!value)
             return "";  // if the value is null return an empty string
         else {
@@ -31,9 +31,9 @@ export class TitlePipe implements PipeTransform {
             wordList.forEach(function(word) {
                 let re = '\\s' + word + '(?=\\s|$)';
                 let regExp = new RegExp(re, "gi");
-                value = value.replace(regExp, " "+word);
+                title = title.replace(regExp, " "+word);
             });
-            return value;
+            return title;
         }
     }
 }
