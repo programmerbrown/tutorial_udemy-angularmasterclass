@@ -15,6 +15,7 @@ export class TitlePipe implements PipeTransform {
             'and',
             'to'
         ];
+        
         let title: string = value;
         if(!value)
             return "";  // if the value is null return an empty string
