@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
-    selector: 'favorite',
+    selector: 'like',
     template:`
-    <span class="glyphicon" (click)="toggleIcon()" [class.glyphicon-star]="isActive" [class.glyphicon-star-empty]="!isActive" aria-hidden="true">{{ numOfLikes }}</span>  
+    
+    <span class="glyphicon glyphicon-heart" (click)="toggleIcon()" [class.liked]="isLiked" aria-hidden="true"></span>
+    <span>{{ likesCount }}</span>
     `
 })
 export class FavoriteComponent {
-    numOfLikes: number = 10;
-    isActive: boolean = false;
+    @Input() likesCount: number;
+    @Input() isLiked: boolean;
 
     toggleIcon() {
-        this.isActive = !this.isActive;
+        this.isLiked = !this.isLiked;
+        (this.isLiked) ? this.likesCount += 1 : this.likesCount -= 1;
     }
 }

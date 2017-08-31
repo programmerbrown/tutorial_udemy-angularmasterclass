@@ -5,6 +5,19 @@ body {
     padding: 20px; 
 }
 
+span {
+    font-size: 2em;
+}
+
 span.glyphicon {
-    font-size: 3em;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.glyphicon-heart {
+    color: #ccc;
+}
+
+.liked {
+    color: deeppink;
 }
