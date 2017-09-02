@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Input     } from '@angular/core';
+import { Component  } from '@angular/core';
+import { Input      } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
     selector: 'zippy',
@@ -7,10 +8,10 @@ import { Input     } from '@angular/core';
     styleUrls: ['./zippy.component.css']
 })
 export class ZippyComponent {
-    //@Input() title: string;
+    @Input() title: string;
     isOpen: boolean = false;
     
     toggle() {
-        this.isOpen = !this.isOpen;
+        return this.isOpen = !this.isOpen;
     }
 }

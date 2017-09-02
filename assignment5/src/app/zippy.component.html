@@ -1,13 +1,25 @@
-<div class="panel panel-default" (click)="toggle()">
-    <div class="panel-body">
-        <span class="pull-right">
-            <span class="glyphicon" 
-                    [ngClass]="{
-                        'glyphicon-chevron-up': isOpen,
-                        'glyphicon-chevron-down': !isOpen
-                    }"
-                    aria-hidden="true">
-            </span>
-        </span>
-    </div>  
-</div>
+<div *ngIf="isOpen;then exposed else notExposed"></div>
+<ng-template #exposed>
+    <div class="panel panel-default" (click)="toggle()">
+        <div class="panel-heading">
+            {{ title }}
+            <span class="pull-right">
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            </span>  
+        </div>   
+        <div class="panel-body" [class.active]="isOpen">
+            <ng-content></ng-content>    
+        </div>
+    </div>
+</ng-template>
+<ng-template #notExposed> 
+    <div class="panel panel-default" (click)="toggle()">
+        <div class="panel-body">
+           {{ title }}
+            <span class="pull-right">
+                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+            </span> 
+        </div>
+    </div>
+</ng-template>
+
