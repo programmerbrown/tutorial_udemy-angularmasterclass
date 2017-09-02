@@ -1,3 +1,10 @@
 .glyphicon {
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+.panel-default {
+    max-width: 500px;
+    height: 80px;
+    padding: 10px;
+    margin-left: 20px;
 }

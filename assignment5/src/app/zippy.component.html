@@ -1,7 +1,13 @@
-<span class="glyphicon" 
-      [ngClass]="{
-         'glyphicon-chevron-up': isOpen,
-         'glyphicon-chevron-down': !isOpen
-      }"
-     (click)="toggle()">
-</span>
+<div class="panel panel-default" (click)="toggle()">
+    <div class="panel-body">
+        <span class="pull-right">
+            <span class="glyphicon" 
+                    [ngClass]="{
+                        'glyphicon-chevron-up': isOpen,
+                        'glyphicon-chevron-down': !isOpen
+                    }"
+                    aria-hidden="true">
+            </span>
+        </span>
+    </div>  
+</div>
