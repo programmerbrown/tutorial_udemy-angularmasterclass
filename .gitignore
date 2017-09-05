@@ -5,3 +5,6 @@ ts-hello/*.js
 
 # Exclude Javascript files from ts-like-button
 ts-like-button/*.js 
+
+# Exclude zip files that I download as part of the project
+*.zip
