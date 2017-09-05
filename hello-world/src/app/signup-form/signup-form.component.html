@@ -1,14 +1,19 @@
-<form>
+<form [formGroup]="form">
     <div class="form-group">
         <label for="username">Username</label>
         <input 
+            formControlName="username"
             id="username" 
             type="text" 
             class="form-control">
+        <div *ngIf="username.touched && usename.invalid" class="alert alert-danger">
+            Username is required.
+        </div>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
         <input 
+            formControlName="password"
             id="password" 
             type="text" 
             class="form-control">
