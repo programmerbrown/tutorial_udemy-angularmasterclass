@@ -8,4 +8,15 @@ export class UsernameValidators {
 
         return null;
     }
+
+    static shouldBeUnique(control: AbstractControl): ValidationErrors | null {
+        setTimeout(() => {
+            console.log('ok');
+        }, 2000);
+        
+        if(control.value === 'mosh')
+            return { shouldBeUnique: true };
+
+        return null;
+    }
 }
