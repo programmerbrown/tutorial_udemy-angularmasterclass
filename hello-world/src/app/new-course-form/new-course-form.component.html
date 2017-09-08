@@ -1,0 +1,16 @@
+<form>
+  <input 
+    #topic
+    type="text" 
+    class="form-control"
+    (keyup.enter)="addTopic(topic)">
+    <ul class="list-group">
+      <li 
+        *ngFor="let topic of topics.controls"
+        (click)="removeTopic(topic)"
+        class="list-group-item">
+      {{ topic.value }}
+      </li>
+
+    </ul>
+</form>

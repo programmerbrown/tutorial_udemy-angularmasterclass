@@ -8,13 +8,15 @@ import { NgModule             } from '@angular/core';
 import { AppComponent         } from './app.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupFormComponent  } from './signup-form/signup-form.component';
+import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupFormComponent,
     CoursesComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    NewCourseFormComponent
   ],
   imports: [
     BrowserModule,
