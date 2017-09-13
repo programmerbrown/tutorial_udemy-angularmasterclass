@@ -6,6 +6,7 @@ import { PostService } from './services/post.service';
 
 import { AppError } from './common/app-error';
 import { NotFoundError } from './common/not-found-error';
+import { BadInput } from './common/bad-input';
 
 @Component({
     selector: 'posts-component',
@@ -38,8 +39,8 @@ export class PostsComponent implements OnInit {
                           console.log(response.json());
                        }, 
                        (error: Response) => {
-                          if(error instanceof NotFoundError) {
-                            alert('This post has not been created.');
+                          if(error instanceof BadInput) {
+                          //  this.form.setErrors(error.originalError);
                           }
                           else {
                             alert('an unexpected error occurred.');
