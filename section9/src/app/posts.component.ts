@@ -22,10 +22,7 @@ export class PostsComponent implements OnInit {
         this.service.getPosts()
                     .subscribe(response => {
                         this.posts = response.json();
-                     }, error => { 
-                       alert('an unexpected error occurred.');
-                       console.log(error);
-                    });
+                     });
     }
 
     createPost(input: HTMLInputElement) {
@@ -36,16 +33,12 @@ export class PostsComponent implements OnInit {
                        response => {
                           post['id'] = response.json().id;
                           this.posts.splice(0, 0, post);
-                          console.log(response.json());
                        }, 
                        (error: Response) => {
                           if(error instanceof BadInput) {
                           //  this.form.setErrors(error.originalError);
                           }
-                          else {
-                            alert('an unexpected error occurred.');
-                            console.log(error);
-                          }   
+                          else throw error;   
                     });
     }
 
@@ -54,11 +47,7 @@ export class PostsComponent implements OnInit {
                  .subscribe(
                     response => {
                        console.log(response.json());
-                    }, 
-                    error => {
-                       alert('an unexpected error occurred.');
-                       console.log(error);
-                 });
+                    });
     }
 
     deletePost(post) {
@@ -71,11 +60,7 @@ export class PostsComponent implements OnInit {
                     (error: AppError) => {
                        if(error instanceof NotFoundError)
                           alert('This post has already been deleted.');
-                       else {
-                          alert('An unexpected error occurred.');
-                          console.log(error);
-                       }
-
+                       else throw error;
                  });
     }
 }
