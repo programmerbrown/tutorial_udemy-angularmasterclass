@@ -14,29 +14,32 @@ export class PostService {
   constructor(private http: Http) { }
 
   getPosts() {
-    return this.http.get(this.url);
+    return this.http.get(this.url)
+               .catch(this.handleError);;
   }
 
   createPost(post) {
     return this.http.post(this.url, JSON.stringify(post))
-                    .catch((error: Response) => {
-                      if(error.status === 400)
-                        return Observable.throw(new BadInput(error.json()));
-                      return Observable.throw(new AppError(error));
-                    });
+                    .catch(this.handleError);
   }
 
   updatePost(post) {
-    return this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true }));
+    return this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true }))
+                    .catch(this.handleError);
   }
 
   deletePost(id) {
     return this.http.delete(this.url + '/' + id)
-                    .catch((error: Response) => {
-                      if(error.status === 404)
-                        return Observable.throw(new NotFoundError());
-                      return Observable.throw(new AppError(error));
-                    });
+                    .catch(this.handleError);
   }
 
+  private handleError(error: Response) {
+    if(error.status === 400)
+      return Observable.throw(new BadInput(error.json()));
+
+    if(error.status === 404)
+      return Observable.throw(new NotFoundError());
+
+    return Observable.throw(new AppError(error));
+  }
 }
