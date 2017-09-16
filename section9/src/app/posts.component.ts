@@ -1,9 +1,6 @@
 import { OnInit } from '@angular/core';
-
 import { Component } from '@angular/core';
-
 import { PostService } from './services/post.service';
-
 import { AppError } from './common/app-error';
 import { NotFoundError } from './common/not-found-error';
 import { BadInput } from './common/bad-input';
