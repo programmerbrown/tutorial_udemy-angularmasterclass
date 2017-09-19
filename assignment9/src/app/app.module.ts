@@ -26,6 +26,10 @@ import { NotFoundComponent } from './not-found.component';
         component: ArchiveComponent
       },
       {
+        path: 'bad',
+        component: NotFoundComponent
+      },
+      {
         path: '**',
         component: NotFoundComponent
       }

@@ -21,6 +21,15 @@ export class ArchiveComponent implements OnInit {
                   .subscribe(param => {
                     this.year = param.get('year');
                     this.month = param.get('month');
+                    let url = this.year + "/" + this.month;
+
+                    let re = '\\d{4}\\/\\d{1}';
+                    let regExp = new RegExp(re, "g");
+                    if(url.match(regExp) == null) {
+                        console.log("The string matches: " + url.match(regExp));
+                        this.router.navigate(['bad']);
+                    }
+
                   });
     }
 
