@@ -18,6 +18,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NoAccessComponent } from './no-access/no-access.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminAuthGuard } from './services/admin-auth-guard.service';
+import { AuthHttp, provideAuth } from 'angular2-jwt';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,13 @@ import { AdminAuthGuard } from './services/admin-auth-guard.service';
   ],
   providers: [
     OrderService,
-
+    AuthHttp,
+    provideAuth({
+      headerName: 'Authorization',
+      headerPrefix: 'Bearer',
+      tokenName: 'token',
+      tokenGetter: (() => localStorage.getItem('token'))
+  }),
     AuthService,
     AuthGuard,
     AdminAuthGuard,
