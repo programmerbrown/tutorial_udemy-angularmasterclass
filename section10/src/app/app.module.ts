@@ -21,7 +21,6 @@ import { TitleCasePipe } from './title-case.pipe';
 import { LikeComponent } from './like/like.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { PostsComponent } from './posts/posts.component';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
@@ -46,7 +45,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LikeComponent,
     ZippyComponent,
     ContactFormComponent,
-    NewCourseFormComponent,
     ChangePasswordComponent,
     PostsComponent,
     GithubFollowersComponent,
