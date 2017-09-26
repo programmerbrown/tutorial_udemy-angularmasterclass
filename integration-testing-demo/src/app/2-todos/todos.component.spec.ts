@@ -2,8 +2,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 import { TodosComponent } from './todos.component';
+import { TodoService } from './todo.service';
 
 //NOTE: I've deliberately excluded this suite from running
 // because the test will fail. This is because we have not 
@@ -18,7 +19,9 @@ xdescribe('TodosComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodosComponent ]
+      imports: [ HttpModule ],
+      declarations: [ TodosComponent ],
+      providers: [ TodoService ]
     })
     .compileComponents();
   }));
