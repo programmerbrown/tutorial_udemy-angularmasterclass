@@ -33,19 +33,11 @@ describe('VoterComponent', () => {
     fixture.detectChanges();
 
     let de = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
-    
-    expect(de.classes['highlighted']).toBeTruthy(); 
+
+    expect(de.classes['highlighted']).toBeTruthy();
   });
 
   it('should increase total votes when I click the upvote button', () => {
-    // component.othersVote = 20;  
-    // component.myVote = 1;
-    // fixture.detectChanges();
-    
-    // let de = fixture.debugElement.query(By.css('.vote-count'));   
-    // let el: HTMLElement = de.nativeElement;
-
-    // expect(el.innerText).toBe(21);
     let button = fixture.debugElement.query(By.css('.glyphicon-menu-up'));
     button.triggerEventHandler('click', null);
 

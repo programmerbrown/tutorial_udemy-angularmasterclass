@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { UsersComponent } from './users.component';
 
-xdescribe('UsersComponent', () => {
+describe('UsersComponent', () => {
   let component: UsersComponent;
   let fixture: ComponentFixture<UsersComponent>;
 

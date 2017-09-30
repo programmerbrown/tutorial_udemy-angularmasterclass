@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-details',
@@ -16,7 +16,7 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  save() { 
+  save() {
     this.router.navigate(['users']);
   }
 }
